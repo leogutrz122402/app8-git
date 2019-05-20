@@ -14,16 +14,16 @@ function onDeviceReady(){
 
 function getPosition(){
 	var options={
-		enableHighAccaracy :true,
+		enableHighAccuracy :true,
 		maximunAge:3600000
 	}
 	
-	var watchID=Navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+	var watchID=navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 	
 	function onSuccess(position){
 		alert('Latitude:'  +pósition.coords.latitude  +'\n'+
 		'Longitude:'  +position.coords.longitude  +'\n');
-	}
+	};
 	function onError(error){
 		alert('code:'  +error.code  +'\n' +'message:'+error.message+'\n');
 	}
