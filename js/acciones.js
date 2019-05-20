@@ -1,31 +1,32 @@
-//JavaScript 
+//JavaScript Document
 
 $(document).ready(function(e) {
-    document.addEventListener("deviceready",onDeviceReady, false);
+    document.addEventListener("deviceready",onDeviceReady,false);
 	
 });
 
 function onDeviceReady(){
 	
-	$('#posicion').on('click',function(){
-		getPosition();
+	$('#posicion').on ('click', function (){
+		getPosition ();
 	});
 }
 
 function getPosition(){
-	var options={
-		enableHighAccuracy :true,
-		maximunAge:3600000
+	var options = {
+		enableHighAccuracy : true,
+		maximunAge: 3600000
 	}
 	
-	var watchID=navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+	var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 	
 	function onSuccess(position){
-		alert('Latitude:'  +pósition.coords.latitude  +'\n'+
-		'Longitude:'  +position.coords.longitude  +'\n');
+		
+		alert('Latitude:'  +position.coords.latitude  +'\n'+
+		'Longitude:'       +position.coords.latitude  +'\n');
 	};
+	
 	function onError(error){
-		alert('code:'  +error.code  +'\n' +'message:'+error.message+'\n');
+		alert('code:' +error.code +'\n'+'message:'+error.message+'\n');
 	}
 }
-		
